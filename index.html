@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LushScape Pruning - Gardening Consultant Services & Blog</title>
+<meta name="description" content="LushScape Pruning: Expert gardening consultant services and a blog filled with pruning tips, gardening advice, customer feedback, and more." />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+  /* Reset & base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #fff;
+    color: #4b5563; /* neutral gray */
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  a {
+    color: #2563eb; /* blue-600 */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a:hover, a:focus {
+    color: #1d4ed8; /* blue-700 */
+    outline: none;
+  }
+  img {
+    max-width: 100%;
+    display: block;
+    border-radius: 0.5rem;
+    object-fit: cover;
+  }
+  h1, h2, h3, h4 {
+    font-weight: 700;
+    color: #111827; /* cool gray-900 */
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  strong {
+    color: #111827;
+  }
+
+  /* Layout container */
+  .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  /* Header */
+  header {
+    position: sticky;
+    top: 0;
+    background-color: #f9fafb; /* very light gray */
+    box-shadow: 0 2px 4px rgb(0 0 0 / 0.05);
+    z-index: 999;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+  }
+  .logo {
+    font-weight: 800;
+    font-size: 1.75rem;
+    color: #059669; /* green-600 */
+    user-select: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 24px;
+  }
+  .nav-links a {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  .nav-links a:hover,
+  .nav-links a:focus {
+    color: #047857; /* green-700 */
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: 80px 0 40px;
+    text-align: center;
+    background-image: linear-gradient(135deg, #d1fae5 0%, #6ee7b7 100%);
+    color: #065f46; /* green-800 */
+    border-radius: 0.75rem;
+  }
+  .hero h1 {
+    margin-bottom: 16px;
+    font-weight: 800;
+  }
+  .hero p {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero .btn-primary {
+    margin-top: 32px;
+    background-color: #059669;
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 0.75rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgb(5 150 105 / 0.3);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .hero .btn-primary:hover,
+  .hero .btn-primary:focus {
+    background-color: #047857;
+    box-shadow: 0 10px 20px rgb(4 120 87 / 0.4);
+    outline: none;
+  }
+
+  /* Main grid layout for content */
+  main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding-bottom: 64px;
+  }
+  @media (min-width: 768px) {
+    main {
+      grid-template-columns: 3fr 1fr;
+      gap: 64px;
+    }
+  }
+
+  /* Blog content area */
+  .blog-content {
+    background-color: #fefefe;
+    padding: 32px 32px 48px;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.05);
+  }
+  .blog-content section {
+    margin-bottom: 48px;
+  }
+  .blog-content img {
+    margin: 16px 0 32px;
+    border-radius: 1rem;
+  }
+  .blog-content blockquote {
+    margin: 2rem 0;
+    padding: 1rem 1.5rem;
+    border-left: 4px solid #10b981;
+    background-color: #dcfce7;
+    font-style: italic;
+    color: #065f46;
+    border-radius: 0.5rem;
+  }
+  /* Tips section with cards */
+  .tips {
+    background-color: #fefefe;
+    padding: 24px 24px 32px;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgb(0 0 0 / 0.05);
+  }
+  .tips h3 {
+    margin-bottom: 24px;
+    color: #065f46;
+  }
+  .tips ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  .tips li {
+    background: #ecfdf5;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    border-radius: 0.5rem;
+    border-left: 4px solid #10b981;
+  }
+
+  /* Sidebar for About & Feedback */
+  aside {
+    background-color: #fefefe;
+    padding: 32px 24px 48px;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .about,
+  .feedback,
+  .disclaimer,
+  .contact-info,
+  .satisfaction {
+    color: #374151;
+  }
+  .about h3,
+  .feedback h3,
+  .disclaimer h3,
+  .contact-info h3,
+  .satisfaction h3 {
+    margin-bottom: 16px;
+    color: #065f46;
+  }
+  .about p,
+  .feedback p,
+  .disclaimer p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  .feedback form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .feedback form label {
+    font-weight: 600;
+  }
+  .feedback form input,
+  .feedback form textarea {
+    padding: 8px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    resize: vertical;
+    font-family: 'Inter', sans-serif;
+  }
+  .feedback form textarea {
+    min-height: 80px;
+  }
+  .feedback form button {
+    background: #10b981;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-weight: 700;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .feedback form button:hover,
+  .feedback form button:focus {
+    background-color: #059669;
+    outline: none;
+  }
+
+  /* Customer satisfaction bar */
+  .satisfaction .bar-container {
+    background: #d1fae5;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    height: 24px;
+    margin: 16px 0 0;
+  }
+  .satisfaction .bar-fill {
+    background: #10b981;
+    width: 93%;
+    height: 100%;
+    transition: width 1s ease-in-out;
+  }
+  .satisfaction .percent {
+    font-weight: 700;
+    color: #065f46;
+    margin-top: 8px;
+    user-select: none;
+  }
+
+  /* Disclaimer styles */
+  .disclaimer {
+    font-size: 0.75rem;
+    color: #6b7280;
+    line-height: 1.4;
+    font-style: italic;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 16px;
+    margin-top: 24px;
+  }
+
+  /* Footer */
+  footer {
+    background-color: #f9fafb;
+    text-align: center;
+    padding: 24px 16px;
+    font-size: 0.875rem;
+    color: #6b7280;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  /* Responsive Images Gallery */
+  .image-gallery {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1fr 1fr;
+    margin: 32px 0;
+  }
+  @media (min-width: 640px) {
+    .image-gallery {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* Accessibility focus outline */
+  a:focus,
+  button:focus,
+  input:focus,
+  textarea:focus {
+    outline: 2px solid #10b981;
+    outline-offset: 2px;
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav aria-label="Primary navigation">
+      <div class="logo" tabindex="0">LushScape Pruning</div>
+      <div class="nav-links">
+        <a href="index.html" tabindex="0"aria-current="page">Home</a>
+        <a href="privacy.html" tabindex="0">Privacy</a>
+        <a href="terms.html" tabindex="0">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0">Cookies</a>
+        <a href="contact.html" tabindex="0">Contact us</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" role="banner" aria-label="Introduction to LushScape Pruning services and blog">
+  <div class="container">
+    <h1>Welcome to LushScape Pruning</h1>
+    <p>Your trusted source for expert gardening consulting, pruning advice, and gardening inspiration. Discover our rich blog content and connect with our team to cultivate a thriving landscape.</p>
+    <button class="btn-primary" onclick="document.getElementById('blog').scrollIntoView({behavior:'smooth'})" aria-label="Explore the blog section">Explore Our Blog</button>
+  </div>
+</section>
+
+<main class="container" role="main">
+  <article class="blog-content" id="blog" tabindex="0" aria-label="Main blog content about pruning and gardening">
+    <section aria-labelledby="section-pruning-basics">
+      <h2 id="section-pruning-basics">Pruning Basics: Understanding the Art and Science</h2>
+      <p>Pruning is essential for the health, beauty, and productivity of plants. Whether you have flowering shrubs, fruit trees, or ornamental plants, knowing the correct pruning techniques will help you shape and sustain a beautiful landscape.</p>
+      <img src="p1.png" alt="Gardener pruning a flowering shrub in a sunny garden with lush green leaves and blooming flowers" />
+      <p>Correct pruning encourages growth, removes dead or diseased wood, and improves air circulation. The timing of pruning varies by plant species and climate, but the principles remain consistent: cut with purpose and care.</p>
+      <p>Typical pruning tools include pruning shears, loppers, and saws. Always keep tools sharp and clean to prevent plant damage and disease spread.</p>
+    </section>
+
+    <section aria-labelledby="section-seasonal-guide">
+      <h2 id="section-seasonal-guide">Seasonal Pruning Guide</h2>
+      <p>Each season presents unique pruning opportunities tailored to plant types:</p>
+      <ul>
+        <li><strong>Winter:</strong> Best for dormant trees and shrubs to shape form and remove damaged limbs.</li>
+        <li><strong>Spring:</strong> Ideal for flowering plants that bloom on new wood.</li>
+        <li><strong>Summer:</strong> Light pruning to maintain shape and remove spent blooms.</li>
+        <li><strong>Fall:</strong> Usually avoided but good for removing dead or diseased wood.</li>
+      </ul>
+      <img src="p2.png" alt="Seasonal garden illustrating spring blossoms and pruning activity with vibrant colors" />
+    </section>
+
+    <section aria-labelledby="section-sustainable-gardening">
+      <h2 id="section-sustainable-gardening">Sustainable Gardening Practices</h2>
+      <p>Sustainability in gardening means nurturing the environment while cultivating beauty. Here are a few tips for an eco-friendly approach:</p>
+      <ul>
+        <li>Use organic fertilizers and compost to enrich soil health.</li>
+        <li>Encourage beneficial insects and birds by planting native flowers.</li>
+        <li>Practice water conservation with drip irrigation and mulching.</li>
+        <li>Choose disease-resistant plant varieties to reduce chemical use.</li>
+      </ul>
+      <img src="p3.png" alt="Garden bed with native plants, beneficial insects like bees and butterflies, and drip irrigation system" />
+    </section>
+
+    <section aria-labelledby="section-common-pruning-mistakes">
+      <h2 id="section-common-pruning-mistakes">Common Pruning Mistakes to Avoid</h2>
+      <p>Even experienced gardeners can make mistakes. Avoid these common errors to keep your garden thriving:</p>
+      <ul>
+        <li>Over-pruning, which can stress plants and reduce blooming.</li>
+        <li>Ignoring the natural shape and growth habit of plants.</li>
+        <li>Pruning at the wrong time for the plant species.</li>
+        <li>Using dirty or dull tools that damage plant tissue.</li>
+      </ul>
+      <img src="p4.png" alt="Over-pruned shrub showing unhealthy appearance with broken branches" />
+    </section>
+
+    <section aria-labelledby="section-tool-care">
+      <h2 id="section-tool-care">Pruning Tools Care and Maintenance</h2>
+      <p>Keeping your pruning tools in top condition improves your work and plant health. Follow these steps:</p>
+      <ol>
+        <li>Clean your tools after each use with soap and water.</li>
+        <li>Sharpen blades regularly to ensure clean cuts.</li>
+        <li>Oil the joints and blades to prevent rust and stiffness.</li>
+        <li>Store in a dry, safe place away from children.</li>
+      </ol>
+      <img src="p4.png" alt="Gardening tools including pruning shears and loppers being cleaned on a wooden table" />
+    </section>
+
+    <section aria-labelledby="section-garden-design-trends">
+      <h2 id="section-garden-design-trends">Latest Garden Design Trends for 2025</h2>
+      <p>Inspired by nature and driven by sustainability, these garden trends are shaping landscapes worldwide:</p>
+      <ul>
+        <li><strong>Wildlife-friendly spaces:</strong> Gardens designed to attract and support local fauna.</li>
+        <li><strong>Edible landscapes:</strong> Combining aesthetics with productivity by growing fruits and vegetables.</li>
+        <li><strong>Vertical gardening:</strong> Maximizing space with wall-mounted planters and green walls.</li>
+        <li><strong>Smart irrigation:</strong> Technology integration for water efficiency.</li>
+      </ul>
+      <img src="p5.png" alt="Modern garden with vertical plant walls and edible garden beds" />
+    </section>
+
+    <section aria-labelledby="section-expert-interview">
+      <h2 id="section-expert-interview">Interview with a Pruning Expert</h2>
+      <blockquote>
+        "Pruning is as much an art as it is a science. Understanding a plant’s natural habits allows us to enhance its beauty while ensuring its health and vigor." – Jane Doe, Master Gardener
+      </blockquote>
+      <img src="p6.png" alt="Portrait of Jane Doe, master gardener, in a lush garden setting" />
+      <p>Jane explains the importance of patience and observation in pruning. Learn from her practical tips and experience in our full video interview available on our website.</p>
+    </section>
+
+    <section aria-labelledby="section-toolkit-guide">
+      <h2 id="section-toolkit-guide">Your Essential Pruning Toolkit</h2>
+      <p>Outfitting yourself with the right tools can make all the difference:</p>
+      <ul>
+        <li><strong>Hand Pruners:</strong> For precise cuts on small stems.</li>
+        <li><strong>Loppers:</strong> For thicker branches and hard-to-reach areas.</li>
+        <li><strong>Pruning Saw:</strong> For larger branches that can't be cut with loppers.</li>
+        <li><strong>Safety Gear:</strong> Gloves, protective eyewear, and sturdy shoes.</li>
+      </ul>
+      <img src="p8.png" alt="Selection of pruning tools including shears, loppers, saw, and gloves laid out on a wooden surface" />
+    </section>
+
+    <section aria-labelledby="section-pruning-trees-shrubs">
+      <h2 id="section-pruning-trees-shrubs">Pruning Trees vs. Shrubs: What You Need to Know</h2>
+      <p>While pruning principles overlap, trees and shrubs require tailored approaches:</p>
+      <ul>
+        <li><strong>Tress:</strong> Focus on removing deadwood and shaping the canopy carefully.</li>
+        <li><strong>Shrubs:</strong> Typically pruned for shape and dense foliage growth, often more frequently.</li>
+        <li>Always consider the growth habit and flowering cycle for each plant type.</li>
+      </ul>
+      <img src="p9.png" alt="Comparison image showing pruning of a tree and a flowering shrub outdoors" />
+    </section>
+
+    <section aria-labelledby="section-seasonal-plant-care">
+      <h2 id="section-seasonal-plant-care">Seasonal Plant Care Tips for a Healthier Garden</h2>
+      <p>Regular seasonal maintenance keeps your garden flourishing year-round:</p>
+      <ul>
+        <li><strong>Spring:</strong> Fertilize and start planting new seedlings.</li>
+        <li><strong>Summer:</strong> Monitor watering and pest control closely.</li>
+        <li><strong>Fall:</strong> Mulch and prepare plants for winter dormancy.</li>
+        <li><strong>Winter:</strong> Protect sensitive plants from frost and snow damage.</li>
+      </ul>
+      <img src="p10.png" alt="Garden showing various plants in different seasons with clear care activities" />
+    </section>
+
+  <aside aria-label="Sidebar with company information, feedback, tips, contact and disclaimer">
+    <section class="about" id="about" tabindex="0">
+      <h3>About LushScape Pruning</h3>
+      <p>At LushScape Pruning, we are passionate about transforming gardens into thriving landscapes through expert pruning and gardening consultancy. With over 20 years of experience, our certified specialists bring personalized advice, sustainable practices, and hands-on solutions to your garden's unique needs.</p>
+      <p>We believe every garden deserves expert care to flourish beautifully and sustainably.</p>
+    </section>
+
+    <section class="tips" id="tips" tabindex="0">
+      <h3>Gardening Tips</h3>
+      <ul>
+        <li>Always prune with clean, sharp tools to avoid plant stress.</li>
+        <li>Observe plant growth patterns before cutting for healthy shaping.</li>
+        <li>Mulch around trees and shrubs to conserve moisture and suppress weeds.</li>
+        <li>Water deeply and less frequently for stronger root systems.</li>
+        <li>Encourage biodiversity to create a balanced garden ecosystem.</li>
+      </ul>
+    </section>
+
+    <section class="feedback" id="feedback" tabindex="0" aria-live="polite" aria-atomic="true">
+      <h3>Customer Feedback</h3>
+      <form id="feedbackForm" aria-label="Submit your feedback form for LushScape Pruning">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required aria-required="true" />
+        
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="your.email@example.com" required aria-required="true" />
+        
+        <label for="feedbackText">Your Feedback</label>
+        <textarea id="feedbackText" name="feedbackText" placeholder="Tell us about your experience..." required aria-required="true"></textarea>
+        
+        <button type="submit">Submit Feedback</button>
+      </form>
+      <p id="feedbackConfirmation" role="alert" style="color:#059669; font-weight:600; display:none; margin-top:12px;">Thank you for your feedback!</p>
+    </section>
+
+    <section class="disclaimer" tabindex="0">
+      <h3>Disclaimer</h3>
+      <p>All content provided on this site is for informational purposes only and is not intended as professional advice. Individual gardening results may vary based on location, climate, and plant types. Always consult with a local gardening expert before significant landscape changes.</p>
+    </section>
+
+    <section class="satisfaction" tabindex="0" aria-label="Customer satisfaction statistic">
+      <h3>Customer Satisfaction</h3>
+      <p>Over 93% of our customers report improved garden health and aesthetics after working with LushScape Pruning.</p>
+      <div class="bar-container" aria-hidden="true">
+        <div class="bar-fill" style="width: 93%;"></div>
+      </div>
+      <div class="percent" aria-live="polite" aria-atomic="true">93% Satisfaction Rate</div>
+    </section>
+
+    <section class="contact-info" id="contact" tabindex="0" aria-label="Contact information for LushScape Pruning">
+      <h3>Contact Us</h3>
+      <address>
+        <strong>LushScape Pruning</strong><br />
+        636 Greenwich St<br />
+        New York, NY 10014<br />
+        USA<br />
+        <a href="tel:+12129999999" aria-label="Phone Number">+1 (212) 999-9999</a><br />
+        <a href="mailto:info@lushscapepruning.com" aria-label="Email Address">info@lushscapepruning.com</a>
+      </address>
+    </section>
+  </aside>
+</main>
+
+<footer role="contentinfo">
+  <div class="container">
+    <p>&copy; 2024 LushScape Pruning. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Feedback form submission simulation
+  const form = document.getElementById('feedbackForm');
+  const confirmation = document.getElementById('feedbackConfirmation');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    // Simple validation passed; in real app, submit via API or backend
+    confirmation.style.display = 'block';
+    form.reset();
+    form.querySelector('input').focus();
+  });
+</script>
+
+</body>
+</html>
+

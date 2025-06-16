@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Terms of Service - LushScape Pruning</title>
+<meta name="description" content="Comprehensive Terms of Service for LushScape Pruning Gardening Consultant Services and Blog. Understand the rules and guidelines for using our services." />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+  /* Reset & base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #fff;
+    color: #4b5563;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  a {
+    color: #2563eb;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a:hover, a:focus {
+    color: #1d4ed8;
+    outline: none;
+  }
+  h1, h2, h3, h4 {
+    font-weight: 700;
+    color: #111827;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  strong {
+    color: #111827;
+  }
+  .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  header {
+    position: sticky;
+    top: 0;
+    background-color: #f9fafb;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 0.05);
+    z-index: 999;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+  }
+  .logo {
+    font-weight: 800;
+    font-size: 1.75rem;
+    color: #059669;
+    user-select: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 24px;
+  }
+  .nav-links a {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  .nav-links a:hover,
+  .nav-links a:focus {
+    color: #047857;
+  }
+  .hero {
+    padding: 80px 0 40px;
+    text-align: center;
+    background-image: linear-gradient(135deg, #d1fae5 0%, #6ee7b7 100%);
+    color: #065f46;
+    border-radius: 0.75rem;
+  }
+  .hero h1 {
+    margin-bottom: 16px;
+    font-weight: 800;
+  }
+  .hero p {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding-bottom: 64px;
+  }
+  @media (min-width: 768px) {
+    main {
+      grid-template-columns: 3fr 1fr;
+      gap: 64px;
+    }
+  }
+  .content-area {
+    background-color: #fefefe;
+    padding: 32px 32px 48px;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.05);
+  }
+  .content-area section {
+    margin-bottom: 48px;
+  }
+  .content-area blockquote {
+    margin: 2rem 0;
+    padding: 1rem 1.5rem;
+    border-left: 4px solid #10b981;
+    background-color: #dcfce7;
+    font-style: italic;
+    color: #065f46;
+    border-radius: 0.5rem;
+  }
+  aside {
+    background-color: #fefefe;
+    padding: 32px 24px 48px;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+  .about,
+  .satisfaction,
+  .contact-info,
+  .disclaimer {
+    color: #374151;
+  }
+  .about h3,
+  .satisfaction h3,
+  .contact-info h3,
+  .disclaimer h3 {
+    margin-bottom: 16px;
+    color: #065f46;
+  }
+  .about p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  .satisfaction .bar-container {
+    background: #d1fae5;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    height: 24px;
+    margin: 16px 0 0;
+  }
+  .satisfaction .bar-fill {
+    background: #10b981;
+    width: 93%;
+    height: 100%;
+    transition: width 1s ease-in-out;
+  }
+  .satisfaction .percent {
+    font-weight: 700;
+    color: #065f46;
+    margin-top: 8px;
+    user-select: none;
+  }
+  .disclaimer {
+    font-size: 0.75rem;
+    color: #6b7280;
+    line-height: 1.4;
+    font-style: italic;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 16px;
+    margin-top: 24px;
+  }
+  footer {
+    background-color: #f9fafb;
+    text-align: center;
+    padding: 24px 16px;
+    font-size: 0.875rem;
+    color: #6b7280;
+    border-top: 1px solid #e5e7eb;
+  }
+  footer address {
+    font-style: normal;
+    margin-top: 8px;
+  }
+  a:focus,
+  button:focus,
+  input:focus,
+  textarea:focus {
+    outline: 2px solid #10b981;
+    outline-offset: 2px;
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav aria-label="Primary navigation">
+      <div class="logo" tabindex="0">LushScape Pruning</div>
+      <div class="nav-links">
+      <a href="index.html" tabindex="0">Home</a>
+        <a href="privacy.html" tabindex="0">Privacy</a>
+        <a href="terms.html" tabindex="0"aria-current="page">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0">Cookies</a>
+        <a href="contact.html" tabindex="0">Contact us</a>
+      </div>
+    </nav>
+  </div>
+</header>
+<section class="hero" role="banner" aria-label="Introduction to LushScape Pruning Terms of Service">
+  <div class="container">
+    <h1>Terms of Service</h1>
+    <p>Please read these Terms of Service carefully before using our services and website.</p>
+  </div>
+</section>
+<main class="container" role="main">
+  <article class="content-area" id="terms-service" tabindex="0" aria-label="Terms of Service detailed content">
+    <section>
+      <h2>Acceptance of Terms</h2>
+      <p>By accessing or using the LushScape Pruning website and services, you agree to be bound by these Terms of Service and our Privacy Policy. If you disagree with any part of the terms, please do not use our website or services.</p>
+    </section>
+    <section>
+      <h2>Use of Services</h2>
+      <p>LushScape Pruning provides gardening consulting, pruning advice, and informative blog content. You agree to use our services and site only for lawful purposes and in a manner that does not infringe others’ rights or restrict their use.</p>
+      <p>Prohibited uses include but are not limited to:</p>
+      <ul>
+        <li>Engaging in fraudulent or illegal activities;</li>
+        <li>Uploading harmful, offensive, or inappropriate content;</li>
+        <li>Interfering with website security or functionality;</li>
+        <li>Attempting unauthorized access to systems or user accounts.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>User Accounts</h2>
+      <p>Certain features may require registration or account creation. You are responsible for safeguarding your account information, maintaining confidentiality of your password, and all activities under your account.</p>
+      <p>You must provide accurate information during registration and update it as necessary. We reserve the right to suspend or terminate accounts that violate our terms or pose security risks.</p>
+    </section>
+    <section>
+      <h2>Intellectual Property</h2>
+      <p>All content published on LushScape Pruning, including text, graphics, logos, images, and software, is the property of LushScape Pruning or its licensors and protected by copyright, trademark, and other intellectual property laws.</p>
+      <p>You may view and download content for personal, non-commercial use only. Any reproduction, distribution, or commercial use without express written permission is prohibited.</p>
+    </section>
+    <section>
+      <h2>Content Accuracy</h2>
+      <p>While we strive to provide accurate and up-to-date information, gardening advice and blog content are for general guidance only. Individual results may vary due to climate, plant type, and care conditions.</p>
+      <p>LushScape Pruning does not guarantee specific outcomes and disclaims liability for damages arising from reliance on our information.</p>
+    </section>
+    <section>
+      <h2>Third-Party Links</h2>
+      <p>Our site may contain links to third-party websites for your convenience. We do not endorse or control these sites and are not responsible for their content or practices. Please review the terms and policies of any third-party site you visit.</p>
+    </section>
+    <section>
+      <h2>Limitation of Liability</h2>
+      <p>To the fullest extent permitted by law, LushScape Pruning shall not be liable for any direct, indirect, incidental, consequential, or punitive damages arising from your use or inability to use our website or services.</p>
+      <p>This limitation applies whether damages arise from contract, tort, negligence, strict liability, or otherwise.</p>
+    </section>
+    <section>
+      <h2>Indemnification</h2>
+      <p>You agree to indemnify and hold harmless LushScape Pruning, its affiliates, employees, and agents from any claims, damages, obligations, losses, liabilities, costs, or debt arising from your breach of these Terms or your misuse of the services.</p>
+    </section>
+    <section>
+      <h2>Termination</h2>
+      <p>We may suspend or terminate your access to the website and services immediately without prior notice or liability for any breach of these Terms. Upon termination, your right to use the services will cease immediately.</p>
+    </section>
+    <section>
+      <h2>Governing Law</h2>
+      <p>These Terms shall be governed and construed in accordance with the laws of the State of New York, without regard to its conflict of law provisions. Any disputes arising shall be resolved in the courts located in New York, NY.</p>
+    </section>
+    <section>
+      <h2>Changes to Terms</h2>
+      <p>LushScape Pruning reserves the right to update or change these Terms at any time. Updated terms will be posted on this page with effective dates. Continued use of our services after changes signifies acceptance of the revised terms.</p>
+      <p>We encourage you to review this page periodically to stay informed.</p>
+    </section>
+
+    <!-- Additional topics -->
+    <section>
+      <h2>User Conduct</h2>
+      <p>While using our website or services, you agree to behave respectfully and avoid any actions that could harm others or disrupt our services. Prohibited conduct includes harassment, hate speech, spamming, transmitting viruses, or attempting to breach our security.</p>
+    </section>
+    <section>
+      <h2>Disclaimer of Warranties</h2>
+      <p>All materials and services provided are "as is" without warranty of any kind, either express or implied, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, or non-infringement. We do not guarantee the accuracy, completeness, or reliability of any content.</p>
+    </section>
+    <section>
+      <h2>External Services</h2>
+      <p>Our website may integrate or offer services from third-party providers (such as analytics or social media). These are subject to their own terms and privacy policies, which we recommend you review carefully.</p>
+    </section>
+    <section>
+      <h2>Feedback and Submissions</h2>
+      <p>Any feedback, comments, or suggestions you provide to us via our website or services shall be deemed non-confidential and non-proprietary. You grant us a royalty-free, worldwide, perpetual license to use, reproduce, and modify such feedback for any purpose.</p>
+    </section>
+    <section>
+      <h2>Severability</h2>
+      <p>If any provision of these Terms is found to be unenforceable or invalid under applicable law, that provision shall be limited or eliminated to the minimum extent necessary, so these Terms shall otherwise remain in full force and effect.</p>
+    </section>
+    <section>
+      <h2>Entire Agreement</h2>
+      <p>These Terms constitute the entire agreement between you and LushScape Pruning regarding your use of our services and supersede all prior agreements.</p>
+    </section>
+  </article>
+  <aside aria-label="Sidebar with about info, customer satisfaction, disclaimers and contact info">
+    <section class="about" tabindex="0">
+      <h3>About LushScape Pruning</h3>
+      <p>LushScape Pruning offers expert gardening consultancy and pruning advice, combining decades of experience with sustainable practices to help your garden thrive.</p>
+    </section>
+    <section class="satisfaction" tabindex="0" aria-label="Customer satisfaction statistic">
+      <h3>Customer Satisfaction</h3>
+      <p>Over 93% of our customers report improved garden health and aesthetics after working with us, reflecting our commitment to quality and personalized service.</p>
+      <div class="bar-container" aria-hidden="true">
+        <div class="bar-fill" style="width: 93%;"></div>
+      </div>
+      <div class="percent" aria-live="polite" aria-atomic="true">93% Satisfaction Rate</div>
+    </section>
+    <section class="disclaimer" tabindex="0">
+      <h3>Disclaimer</h3>
+      <p>These Terms provide general information and do not constitute legal advice. Please consult a legal professional for specific guidance.</p>
+    </section>
+    <section class="contact-info" tabindex="0" aria-label="Contact information for LushScape Pruning">
+      <h3>Contact Us</h3>
+      <address>
+        <strong>LushScape Pruning</strong><br />
+        636 Greenwich St<br />
+        New York, NY 10014<br />
+        USA<br />
+        <a href="tel:+12129999999" aria-label="Phone Number">+1 (212) 999-9999</a><br />
+        <a href="mailto:info@lushscapepruning.com" aria-label="Email Address">info@lushscapepruning.com</a>
+      </address>
+    </section>
+  </aside>
+</main>
+<footer role="contentinfo">
+  <div class="container">
+    <p>&copy; 2024 LushScape Pruning. All rights reserved.</p>
+    <address>
+      636 Greenwich St, New York, NY 10014, USA
+    </address>
+  </div>
+</footer>
+</body>
+</html>
+

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact Us - LushScape Pruning</title>
+<meta name="description" content="Contact LushScape Pruning for expert gardening consulting, pruning advice, and support. Reach out via phone, email, or visit our office." />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+  /* Reset & base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #fff;
+    color: #4b5563;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  a {
+    color: #2563eb;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a:hover, a:focus {
+    color: #1d4ed8;
+    outline: none;
+  }
+  h1, h2, h3, h4 {
+    font-weight: 700;
+    color: #111827;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  strong {
+    color: #111827;
+  }
+  .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  header {
+    position: sticky;
+    top: 0;
+    background-color: #f9fafb;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 0.05);
+    z-index: 999;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+  }
+  .logo {
+    font-weight: 800;
+    font-size: 1.75rem;
+    color: #059669;
+    user-select: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 24px;
+  }
+  .nav-links a {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  .nav-links a:hover,
+  .nav-links a:focus {
+    color: #047857;
+  }
+  .hero {
+    padding: 80px 0 40px;
+    text-align: center;
+    background-image: linear-gradient(135deg, #d1fae5 0%, #6ee7b7 100%);
+    color: #065f46;
+    border-radius: 0.75rem;
+  }
+  .hero h1 {
+    margin-bottom: 16px;
+    font-weight: 800;
+  }
+  .hero p {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding-bottom: 64px;
+  }
+  @media (min-width: 768px) {
+    main {
+      grid-template-columns: 3fr 1fr;
+      gap: 64px;
+    }
+  }
+  .content-area {
+    background-color: #fefefe;
+    padding: 32px 32px 48px;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.05);
+  }
+  .content-area section {
+    margin-bottom: 48px;
+  }
+  aside {
+    background-color: #fefefe;
+    padding: 32px 24px 48px;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+  .about,
+  .satisfaction,
+  .contact-info,
+  .disclaimer {
+    color: #374151;
+  }
+  .about h3,
+  .satisfaction h3,
+  .contact-info h3,
+  .disclaimer h3 {
+    margin-bottom: 16px;
+    color: #065f46;
+  }
+  .about p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  .satisfaction .bar-container {
+    background: #d1fae5;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    height: 24px;
+    margin: 16px 0 0;
+  }
+  .satisfaction .bar-fill {
+    background: #10b981;
+    width: 93%;
+    height: 100%;
+    transition: width 1s ease-in-out;
+  }
+  .satisfaction .percent {
+    font-weight: 700;
+    color: #065f46;
+    margin-top: 8px;
+    user-select: none;
+  }
+  .disclaimer {
+    font-size: 0.75rem;
+    color: #6b7280;
+    line-height: 1.4;
+    font-style: italic;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 16px;
+    margin-top: 24px;
+  }
+  form table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 16px;
+  }
+  form td {
+    vertical-align: top;
+    padding: 8px 12px;
+  }
+  form td.label-cell {
+    width: 28%;
+    font-weight: 600;
+    color: #065f46;
+    padding-top: 14px;
+  }
+  form input,
+  form textarea,
+  form select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    resize: vertical;
+  }
+  form textarea {
+    min-height: 120px;
+  }
+  fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+  fieldset label {
+    font-weight: normal;
+    color: #4b5563;
+  }
+  form button {
+    background-color: #10b981;
+    color: white;
+    font-weight: 700;
+    border: none;
+    border-radius: 12px;
+    padding: 14px 24px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1.125rem;
+    margin-top: 16px;
+  }
+  form button:hover,
+  form button:focus {
+    background-color: #059669;
+    outline: none;
+  }
+  footer {
+    background-color: #f9fafb;
+    text-align: center;
+    padding: 24px 16px;
+    font-size: 0.875rem;
+    color: #6b7280;
+    border-top: 1px solid #e5e7eb;
+  }
+  footer address {
+    font-style: normal;
+    margin-top: 8px;
+  }
+  a:focus,
+  button:focus,
+  input:focus,
+  textarea:focus {
+    outline: 2px solid #10b981;
+    outline-offset: 2px;
+  }
+  .contact-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    gap: 32px 24px;
+    margin-bottom: 48px;
+  }
+  .contact-box {
+    border: 1px solid #d1d5db;
+    padding: 24px;
+    border-radius: 1rem;
+    background: #f9fafb;
+    text-align: center;
+  }
+  .contact-box h3 {
+    margin-bottom: 12px;
+    color: #065f46;
+  }
+  .contact-box p,
+  .contact-box a {
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 8px;
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav aria-label="Primary navigation">
+      <div class="logo" tabindex="0">LushScape Pruning</div>
+      <div class="nav-links">
+     <a href="index.html" tabindex="0">Home</a>
+        <a href="privacy.html" tabindex="0">Privacy</a>
+        <a href="terms.html" tabindex="0">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0">Cookies</a>
+        <a href="contact.html" tabindex="0"aria-current="page">Contact us</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" role="banner" aria-label="Contact LushScape Pruning for gardening consulting and support">
+  <div class="container">
+    <h1>Contact Us</h1>
+    <p>We’re here to help you with your gardening and pruning needs. Reach out to LushScape Pruning for expert advice, consultations, or support.</p>
+  </div>
+</section>
+
+<main class="container" role="main">
+  <article class="content-area" tabindex="0" aria-label="Contact page main content">
+    <section>
+      <h2>Get in Touch</h2>
+      <p>Our experienced team is ready to assist you with personalized gardening consulting, pruning advice, and landscape design tips. We value your inquiries and strive to provide timely responses.</p>
+      <p>Please use any of the contact methods below or visit our office during business hours.</p>
+    </section>
+
+    <section class="contact-methods" aria-label="Contact methods">
+      <div class="contact-box">
+        <h3>Phone</h3>
+        <p><a href="tel:+12129999999" aria-label="Call LushScape Pruning">+1 (212) 999-9999</a></p>
+        <p>Call us Monday to Friday, 9:00 AM - 6:00 PM EST</p>
+      </div>
+      <div class="contact-box">
+        <h3>Email</h3>
+        <p><a href="mailto:info@lushscapepruning.com" aria-label="Email LushScape Pruning">info@lushscapepruning.com</a></p>
+        <p>We respond typically within 1 business day.</p>
+      </div>
+      <div class="contact-box">
+        <h3>Office Location</h3>
+        <address>
+          636 Greenwich St<br />
+          New York, NY 10014<br />
+          USA
+        </address>
+        <p>Visit by appointment only</p>
+      </div>
+      <div class="contact-box">
+        <h3>Live Chat</h3>
+        <p>Chat live with our expert consultants Monday to Friday 9am-5pm EST</p>
+        <a href="#" aria-label="Start live chat" tabindex="0">Start Chat</a>
+      </div>
+      <div class="contact-box">
+        <h3>Fax</h3>
+        <p>+1 (212) 555-1234</p>
+      </div>
+      <div class="contact-box">
+        <h3>WhatsApp</h3>
+        <p><a href="https://wa.me/12129999999" target="_blank" rel="noopener" aria-label="Chat with LushScape Pruning on WhatsApp">Chat via WhatsApp</a></p>
+      </div>
+      <div class="contact-box">
+        <h3>Social Media</h3>
+        <p>
+          <a href="https://facebook.com/lushscapepruning" target="_blank" rel="noopener" aria-label="Facebook page">Facebook</a> | 
+          <a href="https://instagram.com/lushscapepruning" target="_blank" rel="noopener" aria-label="Instagram profile">Instagram</a> | 
+          <a href="https://twitter.com/lushscapeprune" target="_blank" rel="noopener" aria-label="Twitter profile">Twitter</a> | 
+          <a href="https://linkedin.com/company/lushscape-pruning" target="_blank" rel="noopener" aria-label="LinkedIn company page">LinkedIn</a>
+        </p>
+      </div>
+      <div class="contact-box">
+        <h3>Mailing Address</h3>
+        <address>
+          LushScape Pruning<br />
+          PO Box 1234<br />
+          New York, NY 10014<br />
+          USA
+        </address>
+      </div>
+      <div class="contact-box">
+        <h3>Telegram</h3>
+        <p><a href="https://t.me/lushscapepruning" target="_blank" rel="noopener" aria-label="Telegram channel">Join our Telegram channel</a></p>
+      </div>
+      <div class="contact-box">
+        <h3>Google Maps</h3>
+        <p><a href="https://goo.gl/maps/ggvu7Zq9v5wT6mjFA" target="_blank" rel="noopener" aria-label="Google Maps location of LushScape Pruning office">Find us on Google Maps</a></p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Contact Form</h2>
+      <p>Send us a message with your questions or to schedule a consultation. We will reply as soon as possible.</p>
+      <form id="contactForm" aria-label="Contact form for LushScape Pruning">
+        <table>
+          <tr>
+            <td class="label-cell"><label for="fullname">Full Name <span aria-hidden="true">*</span></label></td>
+            <td><input type="text" id="fullname" name="fullname" placeholder="Your full name" required aria-required="true" /></td>
+          </tr>
+          <tr>
+            <td class="label-cell"><label for="email">Email Address <span aria-hidden="true">*</span></label></td>
+            <td><input type="email" id="email" name="email" placeholder="your.email@example.com" required aria-required="true" /></td>
+          </tr>
+          <tr>
+            <td class="label-cell"><label for="phone">Phone Number</label></td>
+            <td><input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567" /></td>
+          </tr>
+          <tr>
+            <td class="label-cell"><label for="preferredContact">Preferred Contact Method</label></td>
+            <td>
+              <select id="preferredContact" name="preferredContact" aria-label="Select preferred contact method">
+                <option value="email">Email</option>
+                <option value="phone">Phone</option>
+                <option value="noPreference" selected>No Preference</option>
+                <option value="whatsapp">WhatsApp</option>
+                <option value="liveChat">Live Chat</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td class="label-cell"><label for="message">Message <span aria-hidden="true">*</span></label></td>
+            <td><textarea id="message" name="message" placeholder="Write your message here..." required aria-required="true"></textarea></td>
+          </tr>
+          <tr>
+            <td class="label-cell">Best time to contact you:</td>
+            <td>
+              <fieldset>
+                <legend class="sr-only">Best time to contact you</legend>
+                <label><input type="radio" name="contactTime" value="morning" /> Morning (8am - 12pm)</label><br />
+                <label><input type="radio" name="contactTime" value="afternoon" /> Afternoon (12pm - 5pm)</label><br />
+                <label><input type="radio" name="contactTime" value="evening" /> Evening (5pm - 8pm)</label><br />
+                <label><input type="radio" name="contactTime" value="anytime" checked /> Anytime</label>
+              </fieldset>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" style="text-align: left;">
+              <button type="submit">Send Message</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <p id="formConfirmation" role="alert" style="color:#059669; font-weight:600; margin-top: 12px; display:none;">Thank you for contacting us! We will respond shortly.</p>
+    </section>
+
+    <section>
+      <h2>Other Ways to Connect</h2>
+      <p>Stay updated and interact with us through our social media platforms and digital channels:</p>
+      <ul>
+        <li><a href="https://facebook.com/lushscapepruning" target="_blank" rel="noopener" aria-label="Facebook page">Facebook</a></li>
+        <li><a href="https://instagram.com/lushscapepruning" target="_blank" rel="noopener" aria-label="Instagram profile">Instagram</a></li>
+        <li><a href="https://twitter.com/lushscapeprune" target="_blank" rel="noopener" aria-label="Twitter profile">Twitter</a></li>
+        <li><a href="https://linkedin.com/company/lushscape-pruning" target="_blank" rel="noopener" aria-label="LinkedIn company page">LinkedIn</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Customer Support Hours</h2>
+      <p>Our customer support team is available at the following times:</p>
+      <ul>
+        <li>Monday to Friday: 9:00 AM to 6:00 PM EST</li>
+        <li>Saturday: 10:00 AM to 4:00 PM EST</li>
+        <li>Sunday: Closed</li>
+      </ul>
+      <p>For after-hours emergencies, please email us and we will respond as soon as possible.</p>
+    </section>
+
+    <section>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <h3>How quickly can I expect a reply after contacting you?</h3>
+      <p>We aim to respond to all inquiries within 24 hours on business days.</p>
+      <h3>Do you offer on-site consultations or virtual sessions?</h3>
+      <p>Both options are available. We tailor our services to suit your preferences and location.</p>
+      <h3>Can I get a quote for pruning services before scheduling?</h3>
+      <p>Yes, please contact us via phone or our contact form to discuss your needs and receive a personalized quote.</p>
+    </section>
+
+    <section>
+      <h2>Feedback and Suggestions</h2>
+      <p>Your feedback helps us improve our services. Please share any comments, suggestions, or concerns using the contact form or by emailing us directly.</p>
+      <p>We value your input and appreciate helping us serve you better.</p>
+    </section>
+  </article>
+
+  <aside aria-label="Sidebar with about info, customer satisfaction, disclaimers and contact info">
+    <section class="about" tabindex="0">
+      <h3>About LushScape Pruning</h3>
+      <p>LushScape Pruning offers expert gardening consultancy and pruning advice, combining decades of experience with sustainable practices to help your garden thrive.</p>
+    </section>
+    <section class="satisfaction" tabindex="0" aria-label="Customer satisfaction statistic">
+      <h3>Customer Satisfaction</h3>
+      <p>Over 93% of our customers report improved garden health and aesthetics after working with us, reflecting our commitment to quality and personalized service.</p>
+      <div class="bar-container" aria-hidden="true">
+        <div class="bar-fill" style="width: 93%;"></div>
+      </div>
+      <div class="percent" aria-live="polite" aria-atomic="true">93% Satisfaction Rate</div>
+    </section>
+    <section class="disclaimer" tabindex="0">
+      <h3>Disclaimer</h3>
+      <p>Contact information provided on this page is for support and inquiries related to LushScape Pruning services only. Use of information for other purposes is prohibited.</p>
+    </section>
+    <section class="contact-info" tabindex="0" aria-label="Contact information for LushScape Pruning">
+      <h3>Contact Us</h3>
+      <address>
+        <strong>LushScape Pruning</strong><br />
+        636 Greenwich St<br />
+        New York, NY 10014<br />
+        USA<br />
+        <a href="tel:+12129999999" aria-label="Phone Number">+1 (212) 999-9999</a><br />
+        <a href="mailto:info@lushscapepruning.com" aria-label="Email Address">info@lushscapepruning.com</a>
+      </address>
+    </section>
+  </aside>
+</main>
+
+<footer role="contentinfo">
+  <div class="container">
+    <p>&copy; 2024 LushScape Pruning. All rights reserved.</p>
+    <address>
+      636 Greenwich St, New York, NY 10014, USA
+    </address>
+  </div>
+</footer>
+
+<script>
+  const form = document.getElementById('contactForm');
+  const confirmation = document.getElementById('formConfirmation');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    confirmation.style.display = 'block';
+    form.reset();
+    form.querySelector('input').focus();
+  });
+</script>
+
+</body>
+</html>
